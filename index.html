@@ -1,235 +1,106 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <title>copadavisdelprode.com</title>
-    <link rel="stylesheet" href="styles/kendo.common.min.css" />
-    <link rel="stylesheet" href="styles/kendo.default.min.css" />
-    <link rel="stylesheet" href="styles/kendo.default.mobile.min.css" />
-
-    <script src="js/jquery.min.js"></script>
-    <script src="js/kendo.all.min.js"></script>
-</head>
-<header id="header-primary">
-    <a href="index.html" class="logo">
-        <figure>
-		 <h2 style="padding-top: 1rem; font-size: 50px;font-weight: 400;text-transform: uppercase;"></h2>
-           <center> <img src="img/sad.jpg" alt=""></center>
-        </figure>
-    </a>
-<body background="img/FONOO.jpg">
-</body> 
-<h2> <center>COPA DAVIS DEL PRODE </center> </h2>
-</body> 
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<!-- Head -->
+<head th:replace="/fragments/head :: head"></head>
+<header th:replace="/fragments/header :: header"></header>
 <body>
-	<header>
-	<center>
-		<nav class="navegacion">
-			<ul class="menu">
-				<li>Copa Davis A
-				<ul class="submenu">
-						<li><a href="posicionesdavisA.html">Posiciones</a></li>
-						<li><a href="resultadosdavisA.html">Resultados</a></li>
-						<li><a href="calendariodavisA.html">Calendario</a></li>
-						<li><a href="palmaresdavisA.html">Palmares</a></li>
-						<li><a href="reglamentodavisA.html">Reglamento</a></li>
-				</ul>
-				</li>
-				<li>Copa Davis B
-				<ul class="submenu">
-						<li><a href="posicionesdavisB.html">Posiciones</a></li>
-						<li><a href="resultadosdavisB.html">Resultados</a></li>
-						<li><a href="calendariodavisB.html">Calendario</a></li>
-						<li><a href="palmaresdavisB.html">Palmares</a></li>
-						<li><a href="reglamentodavisB.html">Reglamento</a></li>
-				</ul>
-				</li>
-				<li>Copa Davis C
-				<ul class="submenu">
-						<li><a href="posicionesdavisC.html">Posiciones</a></li>
-						<li><a href="resultadosdavisC.html">Resultados</a></li>
-						<li><a href="calendariodavisC.html">Calendario</a></li>
-						<li><a href="palmaresdavisC.html">Palmares</a></li>
-						<li><a href="reglamentodavisC.html">Reglamento</a></li>
-				</ul>
-				</li>
-				<li>Historia
-				<ul class="submenu">
-						<li><a href="historiadavisA.html">Primera Division</a></li>
-						<li><a href="historiadavisB.html">Segunda Division</a></li>
-						<li><a href="historiadavisC.html">Tercera Division</a></li>
-				</ul>
-				</li>
-				<li><Planteles
-				<ul class="submenu">
-						<li><a href="plantelesdavisA.html">Primera Division</a></li>
-						<li><a href="plantelesdavisB.html">Segunda Division</a></li>
-						<li><a href="plantelesdavisC.html">Tercera Division</a>
-				</ul>
-				</li>
-		</nav>
-	</center>
-	</header>
-</body>
-<style
-	margin: 0;
-	padding: 0;
-	-webkit-box-sizing: border-box;
-	-moz-box
-	-sizing: border-box;
-	box-sizing: border-box;
-}
 
-body{
-	background: #313D52;
-}
+<main>
+   <nav class="navbar navbar-expand-lg navbar-light bg-gold">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Inicio</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Como se juega?</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Calendario</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Contacto</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
 
-header{
-	width: 100%;
-}
-
-.navegacion{
-	width: 1000px;
-	margin: 30px auto;
-	background: #000000;
-}
-
-.navegacion ul{
-	list-style: none;
-}
-
-.menu > li{
-	position: relative;
-	display: inline-block;
-}
-
-.menu > li > a{
-	display: block;
-	padding: 15px 20px;
-	color: #FFFFFF;
-	font-family: 'Open sans';
-	text-decoration: none;
-}
-
-.menu li a:hover{
-	color: #000000;
-	transition: all .3s;
-}
-
-/* Submenu*/
-
-.submenu{
-	position: absolute;
-	background: #333333;
-	width: 120%;
-	visibility: hidden;
-	opacity: 0;
-	transition: opacity 1.5s;
-}
-
-.submenu li a{
-	display: block;
-	padding: 15px;
-	color: #fff;
-	font-family: 'Open sans';
-	text-decoration: none;
-}
-
-.menu li:hover .submenu{
-	visibility: visible;
-	opacity: 1;
-}
-<style/>
-</body>
-</script>
-   
-
-</html>
-    <style>
-
-        #example {
-            min-height: 200px;
-        }
-
-        #undo {
-            text-align: center;
-			
-            position: absolute;
-            white-space: nowrap;
-            padding: 1em;
-            cursor: pointer;
-        }
-
-        @media screen and (max-width: 1000px) {
-            div.k-window {
-                display: none !important;
-            }
-        }
-    </style>
-<br><br><br><br><h2> <center>IMAGENES DESTACADAS</center></h2></br></br></br></br>
-    <div id="example">
-        <div style="margin:auto; width:100%; padding-top: 2rem; display: flex; justify-content: center;">
-            <div id="scrollView" style="width: 1022px; height: 515px; max-width: 100%;">
-                <div class="photo photo1" data-role="page">
-                    <h2 style="color: rgba(245, 245, 245, 0.5); font-weight: 400;"></h2>
-                </div><div class="photo photo2" data-role="page">
-                    <h2 style="color: rgba(245, 245, 245, 0.5); font-weight: 400;"></h2>
-                </div><div class="photo photo3" data-role="page">
-                    <h2 style="color: rgba(0, 0, 0, 0.5); font-weight: 400;"></h2>
-                </div>
-            </div>
+    <section class="section2">
+        <div class="logo">
+            <img src="img/Logo_StreamCatch.png" alt="">
         </div>
-        <script>
-            $(document).ready(function() {
-                $("#scrollView").kendoScrollView({
-                    enablePager: true,
-                    contentHeight: "100%"
-                });
-            });
-        </script>
-        <style>
-    
-    
-            #scrollview-home .photo {
-                display: inline-block;
-                background-size: cover;
-                background-repeat: no-repeat;
-                background-position: center;
-                }
-    
-            .photo1 {
-                background-image: url("img/argebf.jpg");
-                background-size: cover;
-                background-repeat: no-repeat;
-                background-position: center;
-            }
-    
-            .photo2 {
-                background-image: url("img/espa2.jpg");
-                background-size: cover;
-                background-repeat: no-repeat;
-                background-position: center;
-            }
-    
-            .photo3 {
-                background-image: url("img/uru 2.jpg");
-                background-size: cover;
-                background-repeat: no-repeat;
-                background-position: center;
-            }
-			.photo4 {
-                background-image: url("img/china 2.jpg");
-                background-size: cover;
-                background-repeat: no-repeat;
-                background-position: center;
-            }
-        </style>
+    </section>
+
+	<section class="section3">
+        <div class="titulo-servicios">   
+        	<h2>Copa Davis del Prode</h2>      
+        </div>
+    </section>       
+
+    <section class="section4">
+		<div class="titulo-servicios">
+			<div class='row' style='padding-top:5%;'>
+			
+			<div class='col-lg-4 col-md-4 col-sm-12 bloque'>
+			<a href='https://primeradivision.unidosporelprode.com.ar' class='bloque2 btn btn-light'>
+			<h5>Copa Davis A</h5>
+			<a href="/autor/lista"><img th:src="@{/css/images/ADavis.jpg}" class="img-fluid" alt="...">     
+			</a>
+			</div>
+			<div class='col-lg-4 col-md-4 col-sm-12 bloque'>
+			<a href='https://primeradivision.unidosporelprode.com.ar' class='bloque2 btn btn-light'>
+			<h5>Copa Davis B</h5>
+			<a href="/autor/lista"><img th:src="@{/css/images/DavisB.jpg}" class="img-fluid" alt="...">     
+			</a>
+			</div>
+			<div class='col-lg-4 col-md-4 col-sm-12 bloque'>
+			<a href='https://primeradivision.unidosporelprode.com.ar' class='bloque2 btn btn-light'>
+			<h5>Copa Davis C</h5>
+			<a href="/autor/lista"><img th:src="@{/css/images/DavisC.jpg}" class="img-fluid" alt="...">     
+			</a>
+			</div>
+		</div>
+    </section>
+</main>
+<div class="titulo-servicios">   
+        	<h2>Jugadores del día</h2>      
+        </div>
+<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <a href="/autor/lista"><img th:src="@{/css/images/ADavis.jpg}" class="img-fluid" alt="...">     
+    </div>
+    <div class="carousel-item">
+      <a href="/autor/lista"><img th:src="@{/css/images/DavisB.jpg}" class="img-fluid" alt="...">     
+    </div>
+    <div class="carousel-item">
+      <a href="/autor/lista"><img th:src="@{/css/images/DavisC.jpg}" class="img-fluid" alt="...">     
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
 </div>
-<h2> <center>Noticias de la Semana </center> </h2>
+    
+    <!-- Footer -->
+<footer class="page-footer font-small blue">
 
-<figure>
-<a href="noticia1.html" class="pie de foto"> <img src="img/argebf.jpg" alt="aRGENTINA GANA SU 3RA DAVIS">
-<a href="noticia2.html" class="pie de foto"> <img src="img/canada 2.jpg" alt="aRGENTINA GANA SU 3RA DAVIS"> 
-<a href="noticia3.html" class="pie de foto"><img src="img/suecia 2.jpg" alt="aRGENTINA GANA SU 3RA DAVIS"> 
+  <!-- Copyright -->
+  <div class="footer-copyright text-center py-3">© 2022 Copyright:Copa Davis
+  </div>
+  <!-- Copyright -->
 
-</figure>
+</footer>
+<!-- Footer -->
+
+</body>
+
 </html>
